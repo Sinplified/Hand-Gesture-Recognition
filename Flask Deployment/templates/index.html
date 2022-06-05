@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="ugh, hi." name="description">
+    <meta content="Webcam" name="title">
+    <title>Hand Sign Recognition</title>
+    <style>
+         #container {
+            width : 640px;
+            /* margin: 1px auto; */
+            border: 5px #333 solid;
+            padding: 10px;
+            border-style: solid;
+            
+           
+        }
+        div {
+            background-color: #FFEBCD;
+           
+        }
+
+        #videoElement {
+            width: 640px;
+            height: 480px;
+            display: none;
+            background-color: #666;
+
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            /* Safari and Chrome */
+            -moz-transform: rotateY(180deg);
+            /* Firefox */
+
+        }
+
+        #canvasElement {
+            width: 635px;
+            height: 480px;
+    
+            background-color: aliceblue;
+             border-style: dotted;
+            /* border: 1px solid black; */
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            
+            -moz-transform: rotateY(180deg);
+           
+        }
+
+        #photo {
+            width: 300px;
+            height: 300px;
+
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="padding-left: 45px">Please place your hand inside red square.</h1>
+    <div id="container">
+        <div>
+            <video autoplay="true" id="videoElement"></video>
+            <canvas id="canvasElement"></canvas>
+
+            <!-- <img id="photo"> -->
+            <h3>Predicted Alphabet : <span id="output"></span></h3>
+        </div>
+    </div>
+    <!-- <img src="/video_feed" id = "imageElement" alt=" " >  -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
